@@ -28,7 +28,6 @@ export default {
 @import './scss/styles.scss';
 
 #app {
-  font-family: sans-serif;
   padding: 0 25%;
 }
 </style>

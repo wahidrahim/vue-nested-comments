@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .comment-actions ::v-deep button {
+  font-weight: 300;
   color: lightgray;
   text-transform: uppercase;
   background: none;

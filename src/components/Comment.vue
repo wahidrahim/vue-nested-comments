@@ -5,15 +5,15 @@
 
     <div class="info">
       <div class="d-flex-row align-items-center">
-        <span class="user-name">{{ comment.user_name }}</span>
+        <span class="user-name font-bold">{{ comment.user_name }}</span>
         <!-- Re-usable Badge component, as there are usually multiple badge types -->
         <Badge v-if="comment.user_type" variant="dark">
           {{ comment.user_type }}
         </Badge>
-        <span class="created-at">· 2 mins ago</span>
+        <span class="created-at font-light">· 2 mins ago</span>
       </div>
 
-      <p class="body">{{ comment.body }}</p>
+      <p class="body font-light">{{ comment.body }}</p>
 
       <CommentActions :replies="comment.comments" :votes="comment.votes" />
     </div>
@@ -51,7 +51,7 @@ $border: 1px solid lightgray;
   border-bottom: $border;
 
   .user-name {
-    font-weight: bold;
+    /* font-weight: 500; */
     margin-right: 0.64rem;
   }
 
@@ -60,11 +60,10 @@ $border: 1px solid lightgray;
     color: gray;
     text-transform: uppercase;
     font-size: 1.12rem;
-    font-weight: lighter;
   }
 
   .body {
-    font-weight: lighter;
+    /* font-weight: 300; */
     line-height: 2.88rem;
     margin: 1rem 0;
   }
