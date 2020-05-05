@@ -24,4 +24,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+  font-family: sans-serif;
+}
+</style>

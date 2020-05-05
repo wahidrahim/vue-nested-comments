@@ -1,16 +1,21 @@
 <template>
   <div class="comment">
     <Avatar :url="comment.avatarUrl" />
-    <div class="user-name"></div>
+    <div class="details">
+      <span class="user-name">{{ comment.userName }}</span>
+      <Badge :variant="comment.userType">{{ comment.userType }}</Badge>
+    </div>
   </div>
 </template>
 
 <script>
 import Avatar from './Avatar';
+import Badge from './Badge';
 
 export default {
   components: {
     Avatar,
+    Badge,
   },
   props: {
     comment: {
@@ -30,5 +35,10 @@ $border: 1px solid lightgray;
   padding: 1.5rem;
   border-top: $border;
   border-bottom: $border;
+
+  .details {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 </style>
