@@ -13,32 +13,45 @@
         "user_name": "Kathy",
         "user_type": null,
         "avatar_url": "/images/sample-image-kathy.jpg",
-        "body": "a reply",
+        "body": "Porsche will help fill out the picture of what well-off buyers of the car can expect once it ships.",
         "votes": {
-          "up": 3,
+          "up": 67,
           "down": 0
         },
         "comments": [
           {
-            "user_name": "Kathy",
+            "user_name": "Steven",
             "user_type": null,
-            "avatar_url": "/images/sample-image-kathy.jpg",
-            "body": "a reply",
+            "avatar_url": "/images/sample-image-steven.jpg",
+            "body": "And we’ll likely hear Porsche executives try to position the Taycan as the true tip of the spear for Volkswagen’s larger push into electric vehicles, one that outshines sister company Audi’s early effort, the E-Tron.",
             "votes": {
-              "up": 3,
+              "up": 72,
               "down": 0
             },
-            "comments": [],
+            "comments": [
+              {
+                "user_name": "Wahid",
+                "user_type": null,
+                "avatar_url": "/images/me.jpg",
+                "body": "I too, have seen this at TheVerge",
+                "votes": {
+                  "up": 112,
+                  "down": 0
+                },
+                "comments": [],
+                "created_at": 1588691032350
+              }
+            ],
             "created_at": 1
           }
         ],
         "created_at": 1588691032350
       },
       {
-        "user_name": "Steven",
+        "user_name": "Robert",
         "user_type": null,
-        "avatar_url": "/images/sample-image-steven.jpg",
-        "body": "another reply",
+        "avatar_url": "/images/sample-image-robert.jpg",
+        "body": "After eight uncontested years, Tesla's Model S finally has a rival in the 2020 Porsche Taycan.",
         "votes": {
           "up": 1,
           "down": 0
