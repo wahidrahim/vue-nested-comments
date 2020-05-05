@@ -1,6 +1,6 @@
 <template>
   <div class="comment">
-    <Avatar :url="avatarUrl" />
+    <Avatar :url="comment.avatarUrl" />
     <div class="user-name"></div>
   </div>
 </template>
@@ -8,17 +8,14 @@
 <script>
 import Avatar from './Avatar';
 
-import commentData from '../comment-data.json';
-
 export default {
   components: {
     Avatar,
   },
-  computed: {
-    avatarUrl: () => commentData.avatar_url,
-  },
-  created() {
-    console.log(commentData);
+  props: {
+    comment: {
+      required: true,
+    },
   },
 };
 </script>
