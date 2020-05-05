@@ -96,7 +96,7 @@ $border: 1px solid lightgray;
     }
   }
 
-  &:hover .actions ::v-deep button {
+  &:hover .actions ::v-deep button:not(.voted) {
     color: gray;
   }
 }

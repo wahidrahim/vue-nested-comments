@@ -1,11 +1,15 @@
 <template>
   <span class="vote-buttons">
-    <button @click="toggleUpvote">
-      <span class="chevron-up d-inline-block"></span>
+    <button class="upvote" :class="{ voted: isUpvoted }" @click="toggleUpvote">
+      <span class="chevron d-inline-block"></span>
       <span class="points">{{ localUpvotes }}</span>
     </button>
-    <button @click="toggleDownvote">
-      <span class="chevron-down d-inline-block"></span>
+    <button
+      class="downvote"
+      :class="{ voted: isDownvoted }"
+      @click="toggleDownvote"
+    >
+      <span class="chevron d-inline-block"></span>
       <span class="points">{{ localDownvotes }}</span>
     </button>
   </span>
@@ -35,6 +39,12 @@ export default {
         this.localUpvotes !== this.upvotes ||
         this.localDownvotes !== this.downvotes
       );
+    },
+    isUpvoted() {
+      return this.localUpvotes !== this.upvotes;
+    },
+    isDownvoted() {
+      return this.localDownvotes !== this.downvotes;
     },
   },
   methods: {
@@ -75,8 +85,39 @@ export default {
 }
 
 .vote-buttons {
+  $upvote-color: #ff4500;
+  $downvote-color: #7193ff;
+
   button {
     overflow: hidden;
+
+    &.upvote {
+      .chevron {
+        @include chevron(up);
+      }
+
+      &.voted {
+        color: $upvote-color;
+
+        .chevron {
+          border-color: $upvote-color;
+        }
+      }
+    }
+
+    &.downvote {
+      .chevron {
+        @include chevron(down);
+      }
+
+      &.voted {
+        color: $downvote-color;
+
+        .chevron {
+          border-color: $downvote-color;
+        }
+      }
+    }
 
     .points {
       margin-left: 0.25rem;
@@ -85,14 +126,6 @@ export default {
     &:first-child {
       margin-right: 1rem;
     }
-  }
-
-  .chevron-up {
-    @include chevron(up);
-  }
-
-  .chevron-down {
-    @include chevron(down);
   }
 }
 </style>
