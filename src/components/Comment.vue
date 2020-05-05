@@ -66,6 +66,7 @@ $border: 1px solid lightgray;
   .body {
     font-weight: lighter;
     line-height: 2.88rem;
+    margin: 1rem 0;
   }
 
   &:hover .comment-actions ::v-deep button:not(.voted) {
