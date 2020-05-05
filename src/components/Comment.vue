@@ -1,5 +1,5 @@
 <template>
-  <div class="comment">
+  <div class="comment" :class="{ 'showing-replies': isRepliesVisible }">
     <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
     <Avatar :url="comment.avatar_url" />
 
@@ -20,11 +20,12 @@
       <CommentActions
         :replies="comment.comments"
         :votes="comment.votes"
-        @toggleReplies="showReplies = !showReplies"
+        @toggleReplies="isRepliesVisible = !isRepliesVisible"
       />
 
-      <template v-if="showReplies">
+      <template v-if="isRepliesVisible">
         <Comment
+          class="reply"
           v-for="(comment, i) in comment.comments"
           :key="`reply-${i}`"
           :comment="comment"
@@ -52,7 +53,7 @@ export default {
     },
   },
   data: () => ({
-    showReplies: false,
+    isRepliesVisible: false,
   }),
 };
 </script>
@@ -88,6 +89,20 @@ $border: 1px solid lightgray;
 
   &:hover .comment-actions ::v-deep button:not(.voted) {
     color: gray;
+  }
+
+  &.showing-replies {
+    padding-bottom: 0;
+
+    .comment-actions {
+      margin-bottom: 2.4rem;
+    }
+
+    .reply {
+      border-bottom: none;
+
+      padding-bottom: 0;
+    }
   }
 }
 </style>
