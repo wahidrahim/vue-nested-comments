@@ -1,5 +1,5 @@
 <template>
-  <span class="badge" :class="[variantClass]">
+  <span class="badge" :class="[variant]">
     <slot />
   </span>
 </template>
@@ -10,16 +10,7 @@ export default {
     variant: {
       type: String,
       required: false,
-    },
-  },
-  computed: {
-    variantClass() {
-      switch (this.variant.toLowerCase()) {
-        case 'author':
-          return 'dark';
-        default:
-          return 'default';
-      }
+      default: 'default',
     },
   },
 };

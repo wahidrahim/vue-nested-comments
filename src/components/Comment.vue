@@ -3,9 +3,10 @@
     <Avatar :url="comment.avatarUrl" />
     <div class="details">
       <span class="user-name">{{ comment.userName }}</span>
-      <Badge v-if="comment.userType" :variant="comment.userType">
+      <Badge v-if="comment.userType" variant="dark">
         {{ comment.userType }}
       </Badge>
+      <span class="created-at">· 2 mins ago</span>
     </div>
   </div>
 </template>
@@ -41,6 +42,19 @@ $border: 1px solid lightgray;
   .details {
     display: flex;
     align-items: flex-start;
+
+    .user-name {
+      font-weight: bold;
+      margin-right: 0.4rem;
+    }
+
+    .created-at {
+      margin-left: 0.4rem;
+      color: gray;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: lighter;
+    }
   }
 }
 </style>
