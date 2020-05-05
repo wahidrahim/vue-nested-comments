@@ -18,7 +18,7 @@
           "down": 0
         },
         "comments": [],
-        "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
+        "created_at": 1588691032350
       },
       {
         "user_name": "Robert",
@@ -29,9 +29,9 @@
           "down": 0
         },
         "comments": [],
-        "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
+        "created_at": 1588691032350
       }
     ],
-    "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
+    "created_at": 1588691032350
   }
 ]

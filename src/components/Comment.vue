@@ -10,7 +10,9 @@
         <Badge v-if="comment.user_type" variant="dark">
           {{ comment.user_type }}
         </Badge>
-        <span class="created-at font-light">· 2 mins ago</span>
+        <span class="created-at font-light">
+          · {{ comment.created_at | timeAgo }}
+        </span>
       </div>
 
       <p class="body font-light">{{ comment.body }}</p>
@@ -21,6 +23,8 @@
 </template>
 
 <script>
+import { formatDistanceToNowStrict } from 'date-fns';
+
 import Avatar from './Avatar';
 import Badge from './Badge';
 import CommentActions from './CommentActions';
@@ -30,6 +34,12 @@ export default {
     Avatar,
     Badge,
     CommentActions,
+  },
+  filters: {
+    timeAgo: (time) =>
+      formatDistanceToNowStrict(time, {
+        addSuffix: 'ago',
+      }),
   },
   props: {
     comment: {
