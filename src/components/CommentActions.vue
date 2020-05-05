@@ -1,8 +1,10 @@
 <template>
   <div class="comment-actions">
     <button>Reply</button>
-    <button><span class="dark"></span> Replies</button>
-    <VoteButtons :upvotes="comment.upvotes" :downvotes="comment.downvotes" />
+    <button>
+      <span class="dark">{{ numberOfReplies }}</span> Replies
+    </button>
+    <VoteButtons :upvotes="votes.up" :downvotes="votes.down" />
   </div>
 </template>
 
@@ -14,10 +16,18 @@ export default {
     VoteButtons,
   },
   props: {
-    // Necessary prop drilling
-    comment: {
+    replies: {
+      type: Array,
+      required: true,
+    },
+    votes: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    numberOfReplies() {
+      return this.replies.length;
     },
   },
 };

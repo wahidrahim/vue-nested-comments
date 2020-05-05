@@ -15,7 +15,7 @@
 
       <p class="body">{{ comment.body }}</p>
 
-      <CommentActions :comment="comment" />
+      <CommentActions :replies="comment.comments" :votes="comment.votes" />
     </div>
   </div>
 </template>

@@ -4,15 +4,19 @@
     "user_type": "author",
     "avatar_url": "/images/sample-image-brad.jpg",
     "body": "So what the German automaker is likely to focus on today is the bigger picture. This will be the first time we see the Taycan free from any prototype bodywork.",
-    "upvotes": 123,
-    "downvotes": 0,
+    "votes": {
+      "up": 123,
+      "down": 0
+    },
     "comments": [
       {
         "user_name": "Steven",
         "user_type": null,
         "body": "a reply",
-        "upvotes": 3,
-        "downvotes": 0,
+        "votes": {
+          "up": 3,
+          "down": 0
+        },
         "comments": [],
         "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
       },
@@ -20,8 +24,10 @@
         "user_name": "Robert",
         "user_type": null,
         "body": "another reply",
-        "upvotes": 1,
-        "downvotes": 0,
+        "votes": {
+          "up": 1,
+          "down": 0
+        },
         "comments": [],
         "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
       }
