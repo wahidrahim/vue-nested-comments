@@ -18,6 +18,12 @@
       <p class="body font-light">{{ comment.body }}</p>
 
       <CommentActions :replies="comment.comments" :votes="comment.votes" />
+
+      <Comment
+        v-for="(comment, i) in comment.comments"
+        :key="`reply-${i}`"
+        :comment="comment"
+      />
     </div>
   </div>
 </template>
@@ -28,6 +34,7 @@ import Badge from './Badge';
 import CommentActions from './CommentActions';
 
 export default {
+  name: 'Comment',
   components: {
     Avatar,
     Badge,
