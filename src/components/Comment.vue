@@ -1,57 +1,45 @@
 <template>
   <div class="comment">
-    <div
-      class="wrapper"
-      @mouseenter="isActionsHighlighted = true"
-      @mouseleave="isActionsHighlighted = false"
-    >
-      <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
-      <Avatar :url="comment.avatar_url" />
-
-      <div class="info">
-        <div class="d-flex-row align-items-center">
-          <span class="user-name font-bold">{{ comment.user_name }}</span>
-          <!-- Re-usable Badge component, as there are usually multiple badge types -->
-          <Badge v-if="comment.user_type" variant="dark">
-            {{ comment.user_type }}
-          </Badge>
-          <span class="created-at font-light">
-            · {{ comment.created_at | timeAgo }}
-          </span>
-        </div>
-
-        <p class="body font-light">{{ comment.body }}</p>
-
+    <div class="grid">
+      <div class="avatar-grid-item">
+        <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
+        <Avatar :url="comment.avatar_url" />
+      </div>
+      <div class="content-grid-item">
+        <CommentContent :comment="comment" />
+      </div>
+      <div class="actions-grid-item">
         <CommentActions
+          class="comment-actions-component"
           :class="{ highlight: isActionsHighlighted }"
           :replies="comment.comments"
           :votes="comment.votes"
           @toggleReplies="isRepliesVisible = !isRepliesVisible"
         />
       </div>
-    </div>
 
-    <div class="replies" v-if="isRepliesVisible">
-      <Comment
-        class="reply"
-        v-for="(comment, i) in comment.comments"
-        :key="`reply-${i}`"
-        :comment="comment"
-      />
+      <div class="replies" v-if="isRepliesVisible">
+        <Comment
+          class="reply"
+          v-for="(comment, i) in comment.comments"
+          :key="`reply-${i}`"
+          :comment="comment"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Avatar from './Avatar';
-import Badge from './Badge';
+import CommentContent from './CommentContent';
 import CommentActions from './CommentActions';
 
 export default {
   name: 'Comment',
   components: {
     Avatar,
-    Badge,
+    CommentContent,
     CommentActions,
   },
   props: {
@@ -73,35 +61,38 @@ $border: 1px solid lightgray;
   border-top: $border;
   border-bottom: $border;
 
-  .wrapper {
+  .grid {
     display: grid;
-    grid-template-columns: 7.2rem auto;
-    grid-template-rows: auto;
-    padding: 2.4rem;
+    grid-template-columns: 9.6rem auto;
 
-    .user-name {
-      margin-right: 0.64rem;
+    .avatar-grid-item {
+      display: inline-block;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      margin: 2.4rem auto 0;
     }
 
-    .created-at {
-      margin-left: 0.64rem;
-      color: gray;
-      text-transform: uppercase;
-      font-size: 1.12rem;
+    .content-grid-item {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      margin-top: 2.4rem;
+      margin-right: 2.4rem;
     }
 
-    .body {
-      line-height: 2.88rem;
-      margin: 1rem 0;
+    .actions-grid-item {
+      grid-column-start: 2;
+      margin-right: 2.4rem;
+      margin-bottom: 2.4rem;
     }
-  }
 
-  .replies {
-    margin-left: 9.2rem;
+    .replies {
+      grid-column-start: 2;
 
-    .reply {
-      border-bottom: none;
-      padding-bottom: 0;
+      .reply {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
     }
   }
 }
