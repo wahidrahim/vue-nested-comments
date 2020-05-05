@@ -19,10 +19,10 @@ export default {
 <style lang="scss" scoped>
 .badge {
   text-transform: uppercase;
-  font-size: 0.4rem;
+  font-size: 0.64rem;
   font-weight: bold;
-  padding: 0.2rem 0.6rem;
-  border-radius: 1rem;
+  padding: 0.32rem 0.96rem;
+  border-radius: 1.6rem;
 
   &.default {
     background: #666666;

@@ -44,28 +44,28 @@ $border: 1px solid lightgray;
 
 .comment {
   display: grid;
-  grid-template-columns: 4.5rem auto;
+  grid-template-columns: 7.2rem auto;
   grid-template-rows: auto;
-  padding: 1.5rem;
+  padding: 2.4rem;
   border-top: $border;
   border-bottom: $border;
 
   .user-name {
     font-weight: bold;
-    margin-right: 0.4rem;
+    margin-right: 0.64rem;
   }
 
   .created-at {
-    margin-left: 0.4rem;
+    margin-left: 0.64rem;
     color: gray;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 1.12rem;
     font-weight: lighter;
   }
 
   .body {
     font-weight: lighter;
-    line-height: 1.8rem;
+    line-height: 2.88rem;
   }
 
   &:hover .comment-actions ::v-deep button:not(.voted) {

@@ -65,22 +65,22 @@ export default {
 
 <style lang="scss" scoped>
 @mixin chevron($direction) {
-  $border: 1px solid lightgray;
-  $size: 10px;
+  $border: 0.1rem solid lightgray;
+  $size: 1rem;
 
   position: relative;
-  left: 3px;
+  left: 0.3rem;
   width: $size;
   height: $size;
-  margin-right: 8px;
+  margin-right: 0.8rem;
   transform: rotate(45deg);
 
   @if $direction == up {
-    top: 5px;
+    top: 0.5rem;
     border-left: $border;
     border-top: $border;
   } @else if $direction == down {
-    bottom: 1px;
+    bottom: 0.1rem;
     border-right: $border;
     border-bottom: $border;
   }
@@ -122,11 +122,11 @@ export default {
     }
 
     .points {
-      margin-left: 0.25rem;
+      margin-left: 0.4rem;
     }
 
     &:first-child {
-      margin-right: 1rem;
+      margin-right: 1.6rem;
     }
   }
 }

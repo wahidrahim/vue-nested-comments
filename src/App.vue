@@ -29,5 +29,6 @@ export default {
 
 #app {
   font-family: sans-serif;
+  padding: 0 25%;
 }
 </style>
