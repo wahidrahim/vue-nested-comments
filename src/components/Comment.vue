@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import { formatDistanceToNowStrict } from 'date-fns';
-
 import Avatar from './Avatar';
 import Badge from './Badge';
 import CommentActions from './CommentActions';
@@ -34,12 +32,6 @@ export default {
     Avatar,
     Badge,
     CommentActions,
-  },
-  filters: {
-    timeAgo: (time) =>
-      formatDistanceToNowStrict(time, {
-        addSuffix: 'ago',
-      }),
   },
   props: {
     comment: {
