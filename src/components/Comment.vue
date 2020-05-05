@@ -30,6 +30,7 @@
         />
       </div>
     </div>
+
     <div class="replies" v-if="isRepliesVisible">
       <Comment
         class="reply"
