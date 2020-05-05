@@ -56,6 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 $border: 1px solid lightgray;
+$grid-margin: 2.2rem;
 
 .comment {
   border-top: $border;
@@ -64,30 +65,28 @@ $border: 1px solid lightgray;
   .grid {
     display: grid;
     grid-template-columns: 9.6rem auto;
+    grid-template-areas:
+      'avatar comment'
+      '.      actions'
+      '.      replies';
 
     .avatar-grid-item {
-      display: inline-block;
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      margin: 2.4rem auto 0;
+      grid-area: avatar;
+      margin: $grid-margin auto 0;
     }
 
     .content-grid-item {
-      grid-column-start: 2;
-      grid-row-start: 1;
-      margin-top: 2.4rem;
-      margin-right: 2.4rem;
+      grid-area: comment;
+      margin: $grid-margin $grid-margin 0 0;
     }
 
     .actions-grid-item {
-      grid-column-start: 2;
-      margin-right: 2.4rem;
-      margin-bottom: 2.4rem;
+      grid-area: actions;
+      margin: 0 $grid-margin $grid-margin 0;
     }
 
     .replies {
-      grid-column-start: 2;
+      grid-area: replies;
 
       .reply {
         border-bottom: none;

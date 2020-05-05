@@ -47,8 +47,8 @@ export default {
   }
 
   .body {
-    line-height: 2.88rem;
-    margin: 1rem 0;
+    line-height: 2.6rem;
+    margin: 1rem 0 0.8rem;
   }
 }
 </style>
