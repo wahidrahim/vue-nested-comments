@@ -34,12 +34,6 @@ export default {
     };
   },
   computed: {
-    isVoted() {
-      return (
-        this.localUpvotes !== this.upvotes ||
-        this.localDownvotes !== this.downvotes
-      );
-    },
     isUpvoted() {
       return this.localUpvotes !== this.upvotes;
     },
@@ -52,10 +46,18 @@ export default {
      * Normally you'd also make an api call to update the comment vote counts
      */
     toggleUpvote() {
-      this.isVoted ? ++this.localUpvotes : --this.localUpvotes;
+      if (this.isDownvoted) {
+        this.localDownvotes = this.downvotes;
+      }
+
+      this.isUpvoted ? --this.localUpvotes : ++this.localUpvotes;
     },
     toggleDownvote() {
-      this.isVoted ? ++this.localDownvotes : --this.localDownvotes;
+      if (this.isUpvoted) {
+        this.localUpvotes = this.upvotes;
+      }
+
+      this.isDownvoted ? ++this.localDownvotes : --this.localDownvotes;
     },
   },
 };
