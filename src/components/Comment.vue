@@ -6,7 +6,7 @@
     <div class="info">
       <div class="d-flex-row align-items-center">
         <span class="user-name">{{ comment.user_name }}</span>
-        <!-- There are usually multiple badge types -->
+        <!-- Re-usable Badge component, as there are usually multiple badge types -->
         <Badge v-if="comment.user_type" variant="dark">
           {{ comment.user_type }}
         </Badge>
@@ -18,7 +18,7 @@
       <div class="actions">
         <button>Reply</button>
         <button><span class="dark">21</span> Replies</button>
-        <button>upvote button</button>
+        <VoteButtons />
       </div>
     </div>
   </div>
@@ -27,11 +27,13 @@
 <script>
 import Avatar from './Avatar';
 import Badge from './Badge';
+import VoteButtons from './VoteButtons';
 
 export default {
   components: {
     Avatar,
     Badge,
+    VoteButtons,
   },
   props: {
     comment: {
@@ -70,36 +72,29 @@ $border: 1px solid lightgray;
     line-height: 1.8rem;
   }
 
-  .actions {
-    > * {
-      color: lightgray;
+  .actions ::v-deep button {
+    color: lightgray;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 
-      &:not(:last-child) {
-        margin-right: 1rem;
-      }
+    .dark {
+      color: gray;
     }
 
-    button {
-      text-transform: uppercase;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
 
-      .dark {
-        color: gray;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  &:hover {
-    .actions > * {
-      color: gray;
-    }
+  &:hover .actions ::v-deep button {
+    color: gray;
   }
 }
 </style>
