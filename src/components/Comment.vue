@@ -15,14 +15,7 @@
 
       <p class="body">{{ comment.body }}</p>
 
-      <div class="actions">
-        <button>Reply</button>
-        <button><span class="dark">21</span> Replies</button>
-        <VoteButtons
-          :upvotes="comment.upvotes"
-          :downvotes="comment.downvotes"
-        />
-      </div>
+      <CommentActions :comment="comment" />
     </div>
   </div>
 </template>
@@ -30,13 +23,13 @@
 <script>
 import Avatar from './Avatar';
 import Badge from './Badge';
-import VoteButtons from './VoteButtons';
+import CommentActions from './CommentActions';
 
 export default {
   components: {
     Avatar,
     Badge,
-    VoteButtons,
+    CommentActions,
   },
   props: {
     comment: {
@@ -75,28 +68,7 @@ $border: 1px solid lightgray;
     line-height: 1.8rem;
   }
 
-  .actions ::v-deep button {
-    color: lightgray;
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-
-    .dark {
-      color: gray;
-    }
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &:hover .actions ::v-deep button:not(.voted) {
+  &:hover .comment-actions ::v-deep button:not(.voted) {
     color: gray;
   }
 }
