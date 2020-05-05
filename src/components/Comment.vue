@@ -1,11 +1,11 @@
 <template>
   <div class="comment">
-    <Avatar :url="comment.avatarUrl" />
+    <Avatar :url="comment.avatar_url" />
     <div class="info">
       <div class="d-flex-row align-items-center">
-        <span class="user-name">{{ comment.userName }}</span>
-        <Badge v-if="comment.userType" variant="dark">
-          {{ comment.userType }}
+        <span class="user-name">{{ comment.user_name }}</span>
+        <Badge v-if="comment.user_type" variant="dark">
+          {{ comment.user_type }}
         </Badge>
         <span class="created-at">· 2 mins ago</span>
       </div>
