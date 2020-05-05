@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import './scss/styles.scss';
+
 #app {
   font-family: sans-serif;
 }

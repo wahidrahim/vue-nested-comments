@@ -3,26 +3,26 @@
     "userName": "Brad",
     "userType": "author",
     "avatarUrl": "/images/sample-image-brad.jpg",
-    "comment": "So what the German automaker is likely to focus on today is the bigger picture. This will be the first time we see the Taycan free from any protouserType bodywork.",
+    "body": "So what the German automaker is likely to focus on today is the bigger picture. This will be the first time we see the Taycan free from any protouserType bodywork.",
     "upvotes": 123,
     "downvotes": 0,
-    "replies": [
+    "comments": [
       {
         "userName": "Steven",
         "userType": null,
-        "comment": "a reply",
+        "body": "a reply",
         "upvotes": 3,
         "downvotes": 0,
-        "replies": [],
+        "comments": [],
         "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
       },
       {
         "userName": "Robert",
         "userType": null,
-        "comment": "another reply",
+        "body": "another reply",
         "upvotes": 1,
         "downvotes": 0,
-        "replies": [],
+        "comments": [],
         "createdAt": "Mon, 04 May 2020 23:31:25 GMT"
       }
     ],
