@@ -1,7 +1,7 @@
 <template>
   <div class="comment-actions">
     <button>Reply</button>
-    <button>
+    <button @click="$emit('toggleReplies')">
       <span class="dark">{{ numberOfReplies }}</span> Replies
     </button>
     <VoteButtons :upvotes="votes.up" :downvotes="votes.down" />

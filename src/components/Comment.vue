@@ -17,13 +17,19 @@
 
       <p class="body font-light">{{ comment.body }}</p>
 
-      <CommentActions :replies="comment.comments" :votes="comment.votes" />
-
-      <Comment
-        v-for="(comment, i) in comment.comments"
-        :key="`reply-${i}`"
-        :comment="comment"
+      <CommentActions
+        :replies="comment.comments"
+        :votes="comment.votes"
+        @toggleReplies="showReplies = !showReplies"
       />
+
+      <template v-if="showReplies">
+        <Comment
+          v-for="(comment, i) in comment.comments"
+          :key="`reply-${i}`"
+          :comment="comment"
+        />
+      </template>
     </div>
   </div>
 </template>
@@ -45,6 +51,9 @@ export default {
       required: true,
     },
   },
+  data: () => ({
+    showReplies: false,
+  }),
 };
 </script>
 
