@@ -34,25 +34,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.comment-actions ::v-deep button {
-  font-weight: 300;
-  color: lightgray;
-  text-transform: uppercase;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+.comment-actions {
+  ::v-deep button {
+    font-weight: 300;
+    color: lightgray;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 
-  .dark {
+    .dark {
+      color: gray;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.highlight ::v-deep button {
     color: gray;
-  }
-
-  &:not(:last-child) {
-    margin-right: 1.6rem;
-  }
-
-  &:hover {
-    text-decoration: underline;
   }
 }
 </style>

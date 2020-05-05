@@ -28,6 +28,6 @@ export default {
 @import './scss/styles.scss';
 
 #app {
-  padding: 0 25%;
+  padding: 3.2rem 25%;
 }
 </style>

@@ -18,11 +18,24 @@
           "up": 3,
           "down": 0
         },
-        "comments": [],
+        "comments": [
+          {
+            "user_name": "Kathy",
+            "user_type": null,
+            "avatar_url": "/images/sample-image-kathy.jpg",
+            "body": "a reply",
+            "votes": {
+              "up": 3,
+              "down": 0
+            },
+            "comments": [],
+            "created_at": 1
+          }
+        ],
         "created_at": 1588691032350
       },
       {
-        "user_name": "Robert",
+        "user_name": "Steven",
         "user_type": null,
         "avatar_url": "/images/sample-image-steven.jpg",
         "body": "another reply",
