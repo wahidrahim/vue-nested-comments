@@ -18,7 +18,10 @@
       <div class="actions">
         <button>Reply</button>
         <button><span class="dark">21</span> Replies</button>
-        <VoteButtons />
+        <VoteButtons
+          :upvotes="comment.upvotes"
+          :downvotes="comment.downvotes"
+        />
       </div>
     </div>
   </div>

@@ -1,18 +1,54 @@
 <template>
   <span class="vote-buttons">
-    <button>
+    <button @click="toggleUpvote">
       <span class="chevron-up d-inline-block"></span>
-      <span class="points">123</span>
+      <span class="points">{{ localUpvotes }}</span>
     </button>
-    <button>
+    <button @click="toggleDownvote">
       <span class="chevron-down d-inline-block"></span>
-      <span class="points">0</span>
+      <span class="points">{{ localDownvotes }}</span>
     </button>
   </span>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    upvotes: {
+      type: Number,
+      required: true,
+    },
+    downvotes: {
+      type: Number,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      localUpvotes: this.upvotes,
+      localDownvotes: this.downvotes,
+    };
+  },
+  computed: {
+    isVoted() {
+      return (
+        this.localUpvotes !== this.upvotes ||
+        this.localDownvotes !== this.downvotes
+      );
+    },
+  },
+  methods: {
+    /**
+     * Normally you'd also make an api call to update the comment vote counts
+     */
+    toggleUpvote() {
+      this.isVoted ? ++this.localUpvotes : --this.localUpvotes;
+    },
+    toggleDownvote() {
+      this.isVoted ? ++this.localDownvotes : --this.localDownvotes;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
