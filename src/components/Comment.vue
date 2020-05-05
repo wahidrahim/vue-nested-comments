@@ -3,7 +3,9 @@
     <Avatar :url="comment.avatarUrl" />
     <div class="details">
       <span class="user-name">{{ comment.userName }}</span>
-      <Badge :variant="comment.userType">{{ comment.userType }}</Badge>
+      <Badge v-if="comment.userType" :variant="comment.userType">
+        {{ comment.userType }}
+      </Badge>
     </div>
   </div>
 </template>

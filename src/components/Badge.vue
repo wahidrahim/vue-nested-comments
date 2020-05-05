@@ -14,7 +14,12 @@ export default {
   },
   computed: {
     variantClass() {
-      return this.variant.toLowerCase();
+      switch (this.variant.toLowerCase()) {
+        case 'author':
+          return 'dark';
+        default:
+          return 'default';
+      }
     },
   },
 };
@@ -28,7 +33,12 @@ export default {
   padding: 0.2rem 0.6rem;
   border-radius: 1rem;
 
-  &.author {
+  &.default {
+    background: #666666;
+    color: lightgray;
+  }
+
+  &.dark {
     background: #333333;
     color: white;
   }
