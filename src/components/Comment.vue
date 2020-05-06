@@ -1,21 +1,27 @@
 <template>
   <div class="comment">
     <div class="grid">
-      <div class="avatar-grid-item">
-        <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
-        <Avatar :url="comment.avatar_url" />
-      </div>
-      <div class="content-grid-item">
-        <CommentContent :comment="comment" />
-      </div>
-      <div class="actions-grid-item">
-        <CommentActions
-          class="comment-actions-component"
-          :class="{ highlight: isActionsHighlighted }"
-          :replies="comment.comments"
-          :votes="comment.votes"
-          @toggleReplies="isRepliesVisible = !isRepliesVisible"
-        />
+      <div
+        class="comment-wrapper-grid-item"
+        @mouseenter="isActionsHighlighted = true"
+        @mouseleave="isActionsHighlighted = false"
+      >
+        <div class="avatar-grid-item">
+          <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
+          <Avatar :url="comment.avatar_url" />
+        </div>
+        <div class="content-grid-item">
+          <CommentContent :comment="comment" />
+        </div>
+        <div class="actions-grid-item">
+          <CommentActions
+            class="comment-actions-component"
+            :class="{ highlight: isActionsHighlighted }"
+            :replies="comment.comments"
+            :votes="comment.votes"
+            @toggleReplies="isRepliesVisible = !isRepliesVisible"
+          />
+        </div>
       </div>
 
       <div class="replies" v-if="isRepliesVisible">
@@ -56,6 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 $border: 1px solid lightgray;
+$grid-columns: 9.6rem auto;
 $grid-margin: 2.2rem;
 
 .comment {
@@ -64,25 +71,33 @@ $grid-margin: 2.2rem;
 
   .grid {
     display: grid;
-    grid-template-columns: 9.6rem auto;
+    grid-template-columns: $grid-columns;
     grid-template-areas:
-      'avatar comment'
-      '.      actions'
+      'wrapper wrapper'
       '.      replies';
 
-    .avatar-grid-item {
-      grid-area: avatar;
-      margin: $grid-margin auto 0;
-    }
+    .comment-wrapper-grid-item {
+      grid-area: wrapper;
+      display: grid;
+      grid-template-columns: $grid-columns;
+      grid-template-areas:
+        'avatar comment'
+        '.      actions';
 
-    .content-grid-item {
-      grid-area: comment;
-      margin: $grid-margin $grid-margin 0 0;
-    }
+      .avatar-grid-item {
+        grid-area: avatar;
+        margin: $grid-margin auto 0;
+      }
 
-    .actions-grid-item {
-      grid-area: actions;
-      margin: 0 $grid-margin $grid-margin 0;
+      .content-grid-item {
+        grid-area: comment;
+        margin: $grid-margin $grid-margin 0 0;
+      }
+
+      .actions-grid-item {
+        grid-area: actions;
+        margin: 0 $grid-margin $grid-margin 0;
+      }
     }
 
     .replies {

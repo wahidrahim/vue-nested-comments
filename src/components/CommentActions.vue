@@ -2,7 +2,7 @@
   <div class="comment-actions">
     <button>Reply</button>
     <button @click="$emit('toggleReplies')">
-      <span class="dark">{{ numberOfReplies }}</span> Replies
+      <span class="dark">{{ replies.length }}</span> Replies
     </button>
     <VoteButtons :upvotes="votes.up" :downvotes="votes.down" />
   </div>
@@ -23,11 +23,6 @@ export default {
     votes: {
       type: Object,
       required: true,
-    },
-  },
-  computed: {
-    numberOfReplies() {
-      return this.replies.length;
     },
   },
 };
