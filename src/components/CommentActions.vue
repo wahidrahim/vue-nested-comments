@@ -2,7 +2,7 @@
   <div class="comment-actions">
     <button @click="$emit('toggleReplyForm')">Reply</button>
     <button @click="$emit('toggleReplies')">
-      <span class="dark">{{ replies.length }}</span> Replies
+      <span class="replies-count">{{ replies.length }}</span> Replies
     </button>
     <VoteButtons :upvotes="votes.up" :downvotes="votes.down" />
   </div>
@@ -29,26 +29,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/mixins';
+
 .comment-actions {
   ::v-deep button {
-    font-weight: 300;
-    color: lightgray;
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    @include buttonStyles;
 
-    .dark {
+    .replies-count {
       color: gray;
     }
 
     &:not(:last-child) {
       margin-right: 1.6rem;
-    }
-
-    &:hover {
-      text-decoration: underline;
     }
   }
 

@@ -1,0 +1,14 @@
+@mixin buttonStyles {
+  font-weight: 300;
+  color: lightgray;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: gray;
+    text-decoration: underline;
+  }
+}
