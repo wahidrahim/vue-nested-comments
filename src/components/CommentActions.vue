@@ -32,7 +32,7 @@ export default {
 @import '../scss/mixins';
 
 .comment-actions {
-  ::v-deep button {
+  /deep/ button {
     @include buttonStyles;
 
     .replies-count {
@@ -44,7 +44,7 @@ export default {
     }
   }
 
-  &.highlight ::v-deep button {
+  &.highlight /deep/ button {
     color: gray;
   }
 }

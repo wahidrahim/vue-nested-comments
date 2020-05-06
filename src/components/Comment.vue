@@ -25,10 +25,12 @@
         </div>
       </div>
 
+      <!-- Reply form -->
       <div class="reply-form-grid-item" v-if="isReplyFormVisible">
         <CommentReplyForm />
       </div>
 
+      <!-- Comment replies -->
       <div class="replies-grid-item" v-if="areRepliesVisible">
         <Comment
           class="reply"

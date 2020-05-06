@@ -2,7 +2,7 @@
   <div class="comment-reply-form">
     <form @submit.prevent>
       <textarea></textarea>
-      <button type="submit">Reply</button>
+      <button class="d-block dark" type="submit">Reply</button>
     </form>
   </div>
 </template>
@@ -12,15 +12,20 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/_mixins.scss';
+@import '../scss/mixins';
 
 .comment-reply-form {
+  margin-bottom: 1.2rem;
+
   textarea {
+    box-sizing: border-box;
     border: 1px solid lightgray;
+    width: 100%;
   }
 
   button {
     @include buttonStyles;
+    margin-left: auto;
   }
 }
 </style>
