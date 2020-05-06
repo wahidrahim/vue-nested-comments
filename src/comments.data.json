@@ -33,7 +33,7 @@
                 "user_name": "Wahid",
                 "user_type": null,
                 "avatar_url": "/images/me.jpg",
-                "body": "I too, have seen this at TheVerge",
+                "body": "I too, have seen this at TheVerge 😁",
                 "votes": {
                   "up": 112,
                   "down": 0
@@ -42,7 +42,7 @@
                 "created_at": 1588691032350
               }
             ],
-            "created_at": 1
+            "created_at": 1588691032350
           }
         ],
         "created_at": 1588691032350
