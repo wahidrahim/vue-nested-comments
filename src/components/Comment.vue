@@ -10,8 +10,8 @@
           <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
           <Avatar :url="comment.avatar_url" />
         </div>
-        <div class="content-grid-item">
-          <CommentContent :comment="comment" />
+        <div class="comment-grid-item">
+          <CommentBody :comment="comment" />
         </div>
         <div class="actions-grid-item">
           <CommentActions
@@ -43,7 +43,7 @@
 
 <script>
 import Avatar from './Avatar';
-import CommentContent from './CommentContent';
+import CommentBody from './CommentBody';
 import CommentActions from './CommentActions';
 import CommentReplyForm from './CommentReplyForm';
 
@@ -51,7 +51,7 @@ export default {
   name: 'Comment',
   components: {
     Avatar,
-    CommentContent,
+    CommentBody,
     CommentActions,
     CommentReplyForm,
   },
@@ -98,7 +98,7 @@ $grid-margin: 2.2rem;
         margin: $grid-margin auto 0;
       }
 
-      .content-grid-item {
+      .comment-grid-item {
         grid-area: comment;
         margin: $grid-margin $grid-margin 0 0;
       }

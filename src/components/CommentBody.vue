@@ -1,5 +1,5 @@
 <template>
-  <div class="comment-content">
+  <div class="comment-body">
     <div class="d-flex-row align-items-center">
       <span class="user-name font-bold">
         {{ comment.user_name }}
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.comment-content {
+.comment-body {
   .badge {
     margin-left: 0.64rem;
   }
