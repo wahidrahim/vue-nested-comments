@@ -42,9 +42,6 @@ export default {
     },
   },
   methods: {
-    /**
-     * Normally you'd also make an api call to update the comment vote counts
-     */
     toggleUpvote() {
       if (this.isDownvoted) {
         this.localDownvotes = this.downvotes;

@@ -6,13 +6,17 @@
         @mouseenter="areActionsHighlighted = true"
         @mouseleave="areActionsHighlighted = false"
       >
+        <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
         <div class="avatar-grid-item">
-          <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
           <Avatar :url="comment.avatar_url" />
         </div>
+
+        <!-- Comment body -->
         <div class="comment-grid-item">
           <CommentBody :comment="comment" />
         </div>
+
+        <!-- Comment actions -->
         <div class="actions-grid-item">
           <CommentActions
             class="comment-actions-component"
@@ -26,17 +30,17 @@
       </div>
 
       <!-- Reply form -->
-      <div class="reply-form-grid-item" v-if="isReplyFormVisible">
+      <div v-if="isReplyFormVisible" class="reply-form-grid-item">
         <CommentReplyForm />
       </div>
 
       <!-- Comment replies -->
-      <div class="replies-grid-item" v-if="areRepliesVisible">
+      <div v-if="areRepliesVisible" class="replies-grid-item">
         <Comment
+          v-for="(commentObj, idx) in comment.comments"
+          :key="`reply-${idx}`"
           class="reply"
-          v-for="(comment, i) in comment.comments"
-          :key="`reply-${i}`"
-          :comment="comment"
+          :comment="commentObj"
         />
       </div>
     </div>
@@ -59,6 +63,7 @@ export default {
   },
   props: {
     comment: {
+      type: Object,
       required: true,
     },
   },
