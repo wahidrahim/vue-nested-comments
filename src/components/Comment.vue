@@ -3,8 +3,8 @@
     <div class="grid">
       <div
         class="comment-wrapper-grid-item"
-        @mouseenter="isActionsHighlighted = true"
-        @mouseleave="isActionsHighlighted = false"
+        @mouseenter="areActionsHighlighted = true"
+        @mouseleave="areActionsHighlighted = false"
       >
         <div class="avatar-grid-item">
           <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
@@ -16,15 +16,20 @@
         <div class="actions-grid-item">
           <CommentActions
             class="comment-actions-component"
-            :class="{ highlight: isActionsHighlighted }"
+            :class="{ highlight: areActionsHighlighted }"
             :replies="comment.comments"
             :votes="comment.votes"
-            @toggleReplies="isRepliesVisible = !isRepliesVisible"
+            @toggleReplyForm="isReplyFormVisible = !isReplyFormVisible"
+            @toggleReplies="areRepliesVisible = !areRepliesVisible"
           />
         </div>
       </div>
 
-      <div class="replies" v-if="isRepliesVisible">
+      <div class="reply-form-grid-item" v-if="isReplyFormVisible">
+        <CommentReplyForm />
+      </div>
+
+      <div class="replies-grid-item" v-if="areRepliesVisible">
         <Comment
           class="reply"
           v-for="(comment, i) in comment.comments"
@@ -40,6 +45,7 @@
 import Avatar from './Avatar';
 import CommentContent from './CommentContent';
 import CommentActions from './CommentActions';
+import CommentReplyForm from './CommentReplyForm';
 
 export default {
   name: 'Comment',
@@ -47,6 +53,7 @@ export default {
     Avatar,
     CommentContent,
     CommentActions,
+    CommentReplyForm,
   },
   props: {
     comment: {
@@ -54,8 +61,9 @@ export default {
     },
   },
   data: () => ({
-    isRepliesVisible: false,
-    isActionsHighlighted: false,
+    areActionsHighlighted: false,
+    isReplyFormVisible: false,
+    areRepliesVisible: false,
   }),
 };
 </script>
@@ -74,7 +82,8 @@ $grid-margin: 2.2rem;
     grid-template-columns: $grid-columns;
     grid-template-areas:
       'wrapper wrapper'
-      '.      replies';
+      '.       form   '
+      '.       replies';
 
     .comment-wrapper-grid-item {
       grid-area: wrapper;
@@ -100,7 +109,11 @@ $grid-margin: 2.2rem;
       }
     }
 
-    .replies {
+    .reply-form-grid-item {
+      grid-area: form;
+    }
+
+    .replies-grid-item {
       grid-area: replies;
 
       .reply {

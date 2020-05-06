@@ -1,6 +1,6 @@
 <template>
   <div class="comment-actions">
-    <button>Reply</button>
+    <button @click="$emit('toggleReplyForm')">Reply</button>
     <button @click="$emit('toggleReplies')">
       <span class="dark">{{ replies.length }}</span> Replies
     </button>
