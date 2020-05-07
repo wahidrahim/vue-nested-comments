@@ -5,7 +5,6 @@ describe('VoteButtons.vue', () => {
   it('shows upvotes and downvotes', () => {
     const upvotes = 123;
     const downvotes = -44;
-
     const wrapper = shallowMount(VoteButtons, {
       propsData: {
         upvotes,
