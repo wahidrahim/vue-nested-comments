@@ -62,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 @mixin chevron($direction) {
-  $border: 0.1rem solid lightgray;
+  $border: 0.2rem solid lightgray;
   $size: 1rem;
 
   position: relative;
