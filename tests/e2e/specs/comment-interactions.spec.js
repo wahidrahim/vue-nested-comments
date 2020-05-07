@@ -1,6 +1,12 @@
 describe('Comment component interactions', () => {
   beforeEach(() => cy.visit('/'));
 
+  it('darkens action buttons on hover', () => {
+    cy.get('.comment .comment-actions.highlight').should('not.exist');
+    cy.get('.comment').trigger('mouseenter');
+    cy.get('.comment .comment-actions.highlight').should('exist');
+  });
+
   it('toggles viewing reply form when "REPLY" button is clicked', () => {
     cy.get('.comment-actions > button:nth-child(1)').click();
     cy.contains('.comment-reply-form button', /reply/i);
