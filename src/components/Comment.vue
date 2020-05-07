@@ -1,6 +1,7 @@
 <template>
   <div class="comment">
     <div class="grid">
+      <!-- Wrapper used for hover effect -->
       <div
         class="comment-wrapper-grid-item"
         @mouseenter="areActionsHighlighted = true"
