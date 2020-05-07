@@ -31,7 +31,7 @@
 
       <!-- Reply form -->
       <div v-if="isReplyFormVisible" class="reply-form-grid-item">
-        <CommentReplyForm />
+        <ReplyForm />
       </div>
 
       <!-- Comment replies -->
@@ -51,7 +51,7 @@
 import Avatar from './Avatar';
 import CommentBody from './CommentBody';
 import CommentActions from './CommentActions';
-import CommentReplyForm from './CommentReplyForm';
+import ReplyForm from './ReplyForm';
 
 export default {
   name: 'Comment',
@@ -59,7 +59,7 @@ export default {
     Avatar,
     CommentBody,
     CommentActions,
-    CommentReplyForm,
+    ReplyForm,
   },
   props: {
     comment: {
