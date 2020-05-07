@@ -112,7 +112,7 @@ $grid-margin: 2.2rem;
 
       .actions-grid-item {
         grid-area: actions;
-        margin: 0 $grid-margin $grid-margin 0;
+        margin: 0 $grid-margin ($grid-margin - 0.6rem) 0;
       }
     }
 
