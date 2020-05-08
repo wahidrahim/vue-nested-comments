@@ -1,6 +1,8 @@
 # vue-nested-comments 
 **Demo: https://vue-nested-comments.netlify.app**
 
+![screen shot of nested comments](screenshots/nested-comments.png)
+
 ## Project setup
 ```
 yarn install
