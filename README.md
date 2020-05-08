@@ -1,4 +1,6 @@
-# javascript-comment
+# vue-nested-comments 
+## Demo: https://vue-nested-comments.netlify.app
+---
 
 ## Project setup
 ```
@@ -19,11 +21,13 @@ yarn build
 ```
 yarn test:unit
 ```
+![unit test coverage screenshot](screenshots/unit.png)
 
 ### Run your end-to-end tests
 ```
 yarn test:e2e
 ```
+![end to end testing screenshot](screenshots/e2e.png)
 
 ### Lints and fixes files
 ```
