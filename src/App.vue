@@ -33,5 +33,9 @@ export default {
   @media (max-width: 768px) {
     padding: 3.2rem;
   }
+
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 }
 </style>
