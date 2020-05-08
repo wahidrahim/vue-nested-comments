@@ -1,4 +1,5 @@
 <template>
+  <!-- Re-usable Badge component, as there are usually multiple badge types -->
   <span class="badge" :class="[variant]">
     <slot />
   </span>

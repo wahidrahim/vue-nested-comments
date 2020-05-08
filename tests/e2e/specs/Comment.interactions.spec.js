@@ -9,7 +9,7 @@ describe('Comment component interactions', () => {
 
   it('toggles viewing reply form when "REPLY" button is clicked', () => {
     cy.get('.comment-actions > button:nth-child(1)').click();
-    cy.contains('.comment-reply-form button', /reply/i);
+    cy.contains('.comment-reply-form button', /submit/i);
     cy.get('.comment-actions > button:nth-child(1)').click();
     cy.get('.comment-reply-form button').should('not.exist');
   });

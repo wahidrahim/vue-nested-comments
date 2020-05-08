@@ -2,7 +2,7 @@
   <div class="comment-reply-form">
     <form @submit.prevent>
       <textarea></textarea>
-      <button class="d-block dark" type="submit">Reply</button>
+      <button class="d-block dark" type="submit">Submit</button>
     </form>
   </div>
 </template>

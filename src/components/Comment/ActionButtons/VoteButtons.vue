@@ -1,14 +1,19 @@
 <template>
   <span class="vote-buttons">
+    <!-- Upvote button -->
     <button class="upvote" :class="{ voted: isUpvoted }" @click="toggleUpvote">
+      <!-- Up arrow -->
       <span class="chevron d-inline-block"></span>
       <span class="points">{{ localUpvotes }}</span>
     </button>
+
+    <!-- Downvote button -->
     <button
       class="downvote"
       :class="{ voted: isDownvoted }"
       @click="toggleDownvote"
     >
+      <!-- Down arrow -->
       <span class="chevron d-inline-block"></span>
       <span class="points">{{ localDownvotes }}</span>
     </button>
@@ -62,6 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Mixin to create up/down arrows in CSS
 @mixin chevron($direction) {
   $border: 0.2rem solid lightgray;
   $size: 1rem;

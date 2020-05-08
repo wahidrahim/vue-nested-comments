@@ -1,4 +1,9 @@
 <template>
+  <!--
+  Avatars could have extra functionalities in the future (e.g. click),
+  or it could be re-used in other places. It's a good candidate to be
+  a separate component.
+  -->
   <div class="avatar" :style="backgroundImage"></div>
 </template>
 

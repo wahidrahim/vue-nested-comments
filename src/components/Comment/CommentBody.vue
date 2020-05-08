@@ -1,18 +1,23 @@
 <template>
   <div class="comment-body">
     <div class="d-flex-row align-items-center">
+      <!-- User name -->
       <span class="user-name font-bold">
         {{ comment.user_name }}
       </span>
-      <!-- Re-usable Badge component, as there are usually multiple badge types -->
+
+      <!-- Badge -->
       <Badge v-if="comment.user_type" variant="dark">
         {{ comment.user_type }}
       </Badge>
+
+      <!-- Time duration since posted -->
       <span class="created-at font-light">
         {{ comment.created_at | timeAgo }}
       </span>
     </div>
 
+    <!-- The actual comment -->
     <p class="body font-light">{{ comment.body }}</p>
   </div>
 </template>

@@ -1,9 +1,14 @@
 <template>
   <div class="comment-actions">
+    <!-- REPLY button -->
     <button @click="$emit('toggleReplyForm')">Reply</button>
+
+    <!-- {n} REPLIES button -->
     <button @click="$emit('toggleReplies')">
       <span class="replies-count">{{ replies.length }}</span> Replies
     </button>
+
+    <!-- Upvote/Downvote buttons -->
     <VoteButtons :upvotes="votes.up" :downvotes="votes.down" />
   </div>
 </template>

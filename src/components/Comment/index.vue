@@ -7,7 +7,7 @@
         @mouseenter="areActionsHighlighted = true"
         @mouseleave="areActionsHighlighted = false"
       >
-        <!-- Avatar's may have extra functionalities (click), and could be re-usable -->
+        <!-- Avatar -->
         <div class="avatar-grid-item">
           <Avatar :url="comment.avatar_url" />
         </div>
