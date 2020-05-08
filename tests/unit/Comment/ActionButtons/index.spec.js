@@ -1,7 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
-import ActionButtons from '@/components/CommentActions';
 
-describe('CommentActions.vue', () => {
+import ActionButtons from '@/components/Comment/ActionButtons';
+
+describe('ActionButtons.vue', () => {
   it('emits "toggleReplyForm" event', async () => {
     const wrapper = shallowMount(ActionButtons, {
       propsData: {

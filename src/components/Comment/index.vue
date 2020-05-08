@@ -19,8 +19,7 @@
 
         <!-- Comment actions -->
         <div class="actions-grid-item">
-          <CommentActions
-            class="comment-actions-component"
+          <ActionButtons
             :class="{ highlight: areActionsHighlighted }"
             :replies="comment.comments"
             :votes="comment.votes"
@@ -49,17 +48,17 @@
 </template>
 
 <script>
-import Avatar from './Avatar';
-import CommentBody from './CommentBody';
-import CommentActions from './CommentActions';
-import ReplyForm from './ReplyForm';
+import Avatar from '@/components/Avatar';
+import CommentBody from '@/components/Comment/CommentBody';
+import ActionButtons from '@/components/Comment/ActionButtons';
+import ReplyForm from '@/components/Comment/ReplyForm';
 
 export default {
   name: 'Comment',
   components: {
     Avatar,
     CommentBody,
-    CommentActions,
+    ActionButtons,
     ReplyForm,
   },
   props: {

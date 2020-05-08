@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { shallowMount, mount } from '@vue/test-utils';
+
 import Comment from '@/components/Comment';
 import { timeAgo } from '@/utils/filters';
 

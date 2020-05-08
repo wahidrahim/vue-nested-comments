@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'VoteButtons',
   props: {
     upvotes: {
       type: Number,

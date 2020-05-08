@@ -9,9 +9,10 @@
 </template>
 
 <script>
-import VoteButtons from './VoteButtons';
+import VoteButtons from '@/components/Comment/ActionButtons/VoteButtons';
 
 export default {
+  name: 'ActionButtons',
   components: {
     VoteButtons,
   },
@@ -29,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/mixins';
+@import '~@/scss/mixins';
 
 .comment-actions {
   /deep/ button {

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import { shallowMount, mount } from '@vue/test-utils';
+
 import { timeAgo } from '@/utils/filters';
-import CommentBody from '@/components/CommentBody';
+import CommentBody from '@/components/Comment/CommentBody';
 
 // Needed to resolve error in mounting
 Vue.filter('timeAgo', timeAgo);

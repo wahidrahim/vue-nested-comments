@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../scss/mixins';
+@import '~@/scss/mixins';
 
 .comment-reply-form {
   margin-bottom: 1.2rem;

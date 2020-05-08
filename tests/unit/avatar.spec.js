@@ -1,4 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
+
 import Avatar from '@/components/Avatar';
 
 describe('Avatar.vue', () => {

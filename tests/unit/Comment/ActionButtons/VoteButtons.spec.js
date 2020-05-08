@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import VoteButtons from '@/components/VoteButtons';
+
+import VoteButtons from '@/components/Comment/ActionButtons/VoteButtons';
 
 describe('VoteButtons.vue', () => {
   it('shows upvotes and downvotes', () => {

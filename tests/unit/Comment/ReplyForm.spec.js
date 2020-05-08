@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import ReplyForm from '@/components/ReplyForm';
+
+import ReplyForm from '@/components/Comment/ReplyForm';
 
 describe('ReplyForm.vue', () => {
   it('renders', () => {
