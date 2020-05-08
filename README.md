@@ -1,5 +1,5 @@
 # vue-nested-comments 
-## Demo: https://vue-nested-comments.netlify.app
+**Demo: https://vue-nested-comments.netlify.app**
 ---
 
 ## Project setup
