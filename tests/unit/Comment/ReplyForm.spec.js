@@ -6,6 +6,6 @@ describe('ReplyForm.vue', () => {
   it('renders', () => {
     const wrapper = shallowMount(ReplyForm);
 
-    expect(wrapper.find('form').text()).toMatch(/reply/i);
+    expect(wrapper.find('form').text()).toMatch(/submit/i);
   });
 });
